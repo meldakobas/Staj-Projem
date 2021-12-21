@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="KitapTavsiyeSitesi.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="Tasarım.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style14 {
+            width: 1000px;
+            height: 200px;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="auto-style14">
+            <asp:Image ID="Image1" runat="server" Height="200px" ImageUrl="~/Resimler/adminkitap.jpg" Width="900px" />
+            &nbsp;
+            <div style="margin-top: 50px;">
+                <div class="kategori">
+                    <table class="auto-style1">
+                        <tr>
+                            <td><strong>MENU</strong></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="border: thin solid #FFFFFF"><a href="Kategori.aspx">Kategoriler</a></td>
+                        </tr>
+                        <tr>
+                            <td style="border: thin solid #FFFFFF"><a href="Kitaplar.aspx">Kitaplar</a></td>
+                        </tr>
+
+                        <tr>
+                            <td style="border: thin solid #FFFFFF"><a href="Yorumlar.aspx">Yorumlar</a></td>
+                        </tr>
+                        <tr>
+                            <td style="border: thin solid #FFFFFF"><a href="Mesajlar.aspx">Mesajlar</a></td>
+                        </tr>
+                        <tr>
+                            <td style="border: thin solid #FFFFFF"><a href="HaftaninKitabiAdmin.aspx">Haftanın Kitabı</a></td>
+                        </tr>
+                        <tr>
+                            <td style="border: thin solid #FFFFFF"><a href="KitapOnerileri.aspx">Kitap Önerileri</a></td>
+                        </tr>
+                        <tr>
+                            <td style="border: thin solid #FFFFFF"><a href="HakkimizdaAdmin.aspx">Hakkımızda</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="konu">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

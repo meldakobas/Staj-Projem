@@ -1,0 +1,109 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Kullanıcı.master.cs" Inherits="KitapTavsiyeSitesi.Kullanıcı" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="Tasarım.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style10 {
+            text-align: center;
+            font-weight: bold;
+            height: 36px;
+            background-color: #496688;
+        }
+        .auto-style11 {
+            text-align: center;
+            font-weight: bold;
+            height: 36px;
+            background-color: #496688;
+            width: 9px;
+        }
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="slider">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                
+                <img src="Resimler/sliderkitap.jpg"style="width:1000px;height:300px">
+                
+            </div>
+            <div class="mySlides fade">
+                
+                <img src="Resimler/sliderkitap2.jpg" style="width:1000px;height:300px">
+                
+            </div>
+            <div class="mySlides fade">
+                
+                <img src="Resimler/sliderkitap3.jpeg" style="width:1000px;height:300px">
+                
+            </div>
+        </div>
+        <div style="text-align: center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+            </div>
+        <div class="menu">
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style10"><a href="AnaSayfa.aspx">KİTAPLAR</a></td>
+                    <td class="auto-style10"><a href="HaftaninKitabi.aspx">HAFTANIN KİTABI</a></td>
+                    <td class="auto-style10"><a href="KitapOner.aspx">KİTAP ÖNER</a></td>
+                    <td class="auto-style10"><a href="Hakkimizda.aspx">HAKKIMIZDA</a></td>
+                    <td class="auto-style10"><a href="iletisim.aspx">İLETİŞİM</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="anadiv">
+            <div class="kategori">
+                KİTAP KATEGORİLERİ<br />
+                <asp:DataList ID="DataList1" runat="server" Width="229px">
+                    <ItemTemplate>
+                        <div style="border: thin solid #CCCCCC">
+                            <a href="KategoriDetay.aspx?Kategoriid=<%#Eval("Kategoriid") %>">
+                                <asp:Label ID="Label1" runat="server" BorderColor="#99CCFF" Text='<%# Eval("KategoriAd") %>'></asp:Label></a>
+                            /
+                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("KategoriAdet") %>'></asp:Label>
+                        </div>
+                    </ItemTemplate>
+                </asp:DataList>
+                &nbsp;
+            </div>
+            <div class="konu">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder> 
+            </div>
+        </div>
+    </form>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 3000);
+        }
+    </script>
+</body>
+
+</html>
